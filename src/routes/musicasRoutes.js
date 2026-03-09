@@ -1,0 +1,10 @@
+const express = require('express');
+const router = express.Router();
+const musicasController = require('../controllers/musicasController');
+router.get('/', musicasController.listarTodos);
+router.get('/busca/nome', musicasController.buscarPorNome);
+router.get('/:id', musicasController.buscarPorId);
+router.post('/', musicasController.incluirMusica);
+router.put('/:id', musicasController.atualizar);
+router.delete('/:id', musicasController.deletar);
+module.exports = router;
